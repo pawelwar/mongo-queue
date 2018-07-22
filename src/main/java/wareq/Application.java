@@ -1,12 +1,12 @@
-package wareq.mongoqueue;
+package wareq;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MongoqueueApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MongoqueueApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 }

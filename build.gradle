@@ -1,13 +1,13 @@
 buildscript {
-	ext {
-		springBootVersion = '2.0.3.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '2.0.3.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
 apply plugin: 'java'
@@ -20,11 +20,14 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile group: 'com.github.fakemongo', name: 'fongo', version: '2.2.0-RC2'
+
+    compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile group: 'org.spockframework', name: 'spock-spring', version: '1.1-groovy-2.4'
 }
